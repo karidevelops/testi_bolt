@@ -154,29 +154,29 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
           </Card>
 
           {/* Back side */}
-          <Card className="absolute inset-0 p-6 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-accent text-accent-foreground overflow-hidden" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                <div className="w-6 h-6 rounded-full bg-white"></div>
+          <Card className="absolute inset-0 p-5 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-accent text-accent-foreground overflow-y-auto" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-5 h-5 rounded-full bg-white"></div>
               </div>
-              <h3 className="text-xl font-bold uppercase tracking-wide">
+              <h3 className="text-lg font-bold uppercase tracking-wide">
                 Paketin sisältö
               </h3>
             </div>
-            <div className="space-y-3 flex-grow">
+            <div className="space-y-2 flex-grow overflow-y-auto">
               {details?.map((detail, idx) => (
                 <div key={idx}>
-                  <div className="font-bold text-sm mb-0.5">{detail.label}</div>
-                  <div className="text-xs opacity-90 leading-relaxed">{detail.content}</div>
+                  <div className="font-bold text-xs mb-0.5">{detail.label}</div>
+                  <div className="text-xs opacity-90 leading-snug">{detail.content}</div>
                 </div>
               ))}
             </div>
-            <div className="mt-auto pt-4">
-              <p className="text-lg font-bold mb-4">
+            <div className="mt-3 pt-3 border-t border-white/20 flex-shrink-0">
+              <p className="text-base font-bold mb-3">
                 {price}
               </p>
               <Button
-                className="w-full bg-white hover:bg-white/90 text-accent font-semibold shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wide rounded-full py-2 text-sm"
+                className="w-full bg-white hover:bg-white/90 text-accent font-semibold shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wide rounded-full py-2 text-xs"
                 onClick={(e) => {
                   e.stopPropagation();
                   onButtonClick();
