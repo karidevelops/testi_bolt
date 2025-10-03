@@ -113,7 +113,7 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
 
   if (detailsType === "flip") {
     return (
-      <div className="relative h-full" style={{ perspective: "1000px" }}>
+      <div className="relative h-[500px]" style={{ perspective: "1000px" }}>
         <div
           className={`relative w-full h-full transition-transform duration-700 cursor-pointer`}
           style={{
@@ -123,7 +123,7 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
           onClick={() => setIsFlipped(!isFlipped)}
         >
           {/* Front side */}
-          <Card className="absolute inset-0 p-8 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-card group overflow-hidden" style={{ backfaceVisibility: "hidden" }}>
+          <Card className="absolute inset-0 p-8 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-card group overflow-visible" style={{ backfaceVisibility: "hidden" }}>
             {isPopular && (
               <div className="absolute top-4 -right-10 bg-accent text-accent-foreground px-14 py-2 rotate-45 text-sm font-bold uppercase tracking-wide shadow-lg text-center animate-pulse">
                 Suosituin
