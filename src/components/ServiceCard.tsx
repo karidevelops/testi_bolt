@@ -125,8 +125,10 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
           {/* Front side */}
           <Card className="absolute inset-0 p-8 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-card group overflow-hidden" style={{ backfaceVisibility: "hidden" }}>
             {isPopular && (
-              <div className="absolute top-4 -right-10 bg-accent text-accent-foreground px-14 py-2 rotate-45 text-sm font-bold uppercase tracking-wide shadow-lg text-center animate-pulse">
-                Suosituin
+              <div className="absolute -top-1 -right-1 w-32 h-32 overflow-hidden">
+                <div className="absolute top-8 -right-8 bg-accent text-accent-foreground px-12 py-1.5 rotate-45 text-xs font-bold uppercase tracking-wide shadow-lg text-center w-40">
+                  Suosituin
+                </div>
               </div>
             )}
             <div className="flex items-center gap-4 mb-6">
