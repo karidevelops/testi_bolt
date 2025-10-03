@@ -1,4 +1,3 @@
-import logo from "@/assets/c7-logo.png";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -28,7 +27,7 @@ const Header = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <img src={logo} alt="Concept7 Logo" className="h-12 w-auto" />
+          <span className="text-2xl font-bold text-foreground">CONCEPT7</span>
         </a>
         
         {/* Desktop Navigation */}

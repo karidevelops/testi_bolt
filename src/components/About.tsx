@@ -1,5 +1,3 @@
-import profileImage from "@/assets/kari-vatka.jpg";
-import referenssitImage from "@/assets/referenssit.png";
 
 const About = () => {
   return (
@@ -12,11 +10,7 @@ const About = () => {
         
         <div className="flex flex-col md:flex-row gap-12 items-start mb-16">
           <div className="md:w-1/3 flex justify-center">
-            <img 
-              src={profileImage} 
-              alt="Profiilikuva Kari Vatka" 
-              className="rounded-lg shadow-2xl w-full max-w-sm object-cover"
-            />
+            <div className="rounded-lg shadow-2xl w-full max-w-sm aspect-square bg-gradient-to-br from-slate-200 to-slate-400"></div>
           </div>
           
           <div className="md:w-2/3 space-y-6 text-lg text-foreground leading-relaxed">
@@ -33,11 +27,9 @@ const About = () => {
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center uppercase tracking-tight">
             Referenssit
           </h3>
-          <img 
-            src={referenssitImage} 
-            alt="Referenssit" 
-            className="w-full rounded-lg shadow-2xl"
-          />
+          <div className="w-full rounded-lg shadow-2xl aspect-video bg-gradient-to-br from-slate-100 to-slate-300 flex items-center justify-center">
+            <p className="text-slate-500 text-xl">Referenssit</p>
+          </div>
         </div>
       </div>
     </section>
