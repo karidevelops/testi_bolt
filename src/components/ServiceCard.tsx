@@ -150,21 +150,24 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
           </Card>
 
           {/* Back side */}
-          <Card className="absolute inset-0 p-8 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-accent text-accent-foreground overflow-auto" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
-            <h3 className="text-2xl font-bold mb-4 uppercase tracking-wide break-words">
+          <Card className="absolute inset-0 p-6 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-accent text-accent-foreground overflow-hidden" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
+            <h3 className="text-xl font-bold mb-3 uppercase tracking-wide">
               {title}
             </h3>
-            <div className="space-y-4 flex-grow overflow-auto">
+            <div className="space-y-2 flex-grow">
               {details?.map((detail, idx) => (
-                <div key={idx}>
-                  <h4 className="font-semibold mb-1">{detail.label}</h4>
-                  <p className="text-sm opacity-90">{detail.content}</p>
+                <div key={idx} className="text-sm">
+                  <span className="font-semibold">{detail.label}</span>
+                  <span className="opacity-90 ml-1">{detail.content}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-6">
+            <div className="mt-4 space-y-2">
+              <p className="text-lg font-bold">
+                {price}
+              </p>
               <Button
-                className="w-full bg-white hover:bg-white/90 text-accent font-semibold shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wide"
+                className="w-full bg-white hover:bg-white/90 text-accent font-semibold shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wide text-sm py-2"
                 onClick={(e) => {
                   e.stopPropagation();
                   onButtonClick();
@@ -172,8 +175,8 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
               >
                 {buttonText}
               </Button>
-              <div className="flex items-center justify-center text-sm font-semibold mt-3">
-                <Info className="h-4 w-4 mr-2" />
+              <div className="flex items-center justify-center text-xs font-semibold opacity-75">
+                <Info className="h-3 w-3 mr-1" />
                 Klikkaa kääntääksesi takaisin
               </div>
             </div>
