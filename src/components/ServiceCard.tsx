@@ -151,12 +151,14 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
 
           {/* Back side */}
           <Card className="absolute inset-0 p-8 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-accent text-accent-foreground overflow-hidden" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
-            <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-6">
-              <div className="w-8 h-8 rounded-full bg-white"></div>
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-bold uppercase tracking-wide">
+                Paketin sisältö
+              </h3>
+              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-white"></div>
+              </div>
             </div>
-            <h3 className="text-2xl font-bold mb-6 uppercase tracking-wide">
-              Paketin sisältö
-            </h3>
             <div className="space-y-4 flex-grow">
               {details?.map((detail, idx) => (
                 <div key={idx}>
@@ -170,7 +172,7 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
                 {price}
               </p>
               <Button
-                className="w-full bg-white hover:bg-white/90 text-accent font-semibold shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wide"
+                className="w-full bg-white hover:bg-white/90 text-accent font-semibold shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wide rounded-full"
                 onClick={(e) => {
                   e.stopPropagation();
                   onButtonClick();
