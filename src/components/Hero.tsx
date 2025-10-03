@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/og-image-new.jpg";
 const Hero = () => {
   return <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <div className="w-full h-full bg-gradient-to-br from-slate-900 to-slate-700"></div>
+        <img src={heroImage} alt="Hero background" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/80"></div>
       </div>
       <div className="absolute inset-0 opacity-20">
