@@ -32,7 +32,7 @@ const Services = () => {
             price="1 200 € / kertapaketti (alv 0%)"
             buttonText="Kysy lisää"
             onButtonClick={handleContactClick}
-            detailsType="expandable"
+            detailsType="flip"
             details={[
               { label: "⏱️ Kesto", content: "2-3 tapaamista, 1-2 viikkoa" },
               { label: "📋 Sisältö", content: "Haasteiden kartoitus, konkreettiset toimenpidesuositukset, kirjallinen yhteenveto" },

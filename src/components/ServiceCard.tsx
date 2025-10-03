@@ -18,12 +18,13 @@ interface ServiceCardProps {
   buttonText: string;
   onButtonClick: () => void;
   isPopular?: boolean;
-  detailsType?: "accordion" | "popover" | "modal" | "expandable";
+  detailsType?: "accordion" | "popover" | "modal" | "expandable" | "flip";
   details?: ServiceDetail[];
 }
 
 const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isPopular, detailsType, details }: ServiceCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const renderDetails = () => {
     if (!details || !detailsType) return null;
@@ -102,10 +103,85 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
           </div>
         );
 
+      case "flip":
+        return null; // Flip is handled at card level
+
       default:
         return null;
     }
   };
+
+  if (detailsType === "flip") {
+    return (
+      <div className="relative h-full" style={{ perspective: "1000px" }}>
+        <div
+          className={`relative w-full h-full transition-transform duration-700 cursor-pointer`}
+          style={{
+            transformStyle: "preserve-3d",
+            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+          }}
+          onClick={() => setIsFlipped(!isFlipped)}
+        >
+          {/* Front side */}
+          <Card className="absolute inset-0 p-8 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-card group overflow-hidden" style={{ backfaceVisibility: "hidden" }}>
+            {isPopular && (
+              <div className="absolute top-4 -right-10 bg-accent text-accent-foreground px-14 py-2 rotate-45 text-sm font-bold uppercase tracking-wide shadow-lg text-center animate-pulse">
+                Suosituin
+              </div>
+            )}
+            <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:animate-pulse-scale transition-colors duration-300">
+              <div className="w-8 h-8 rounded-full bg-accent group-hover:bg-white transition-colors duration-300"></div>
+            </div>
+            <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors duration-300 uppercase tracking-wide break-words">
+              {title}
+            </h3>
+            <p className="text-muted-foreground mb-6 flex-grow leading-relaxed text-base">
+              {description}
+            </p>
+            <div className="mt-auto">
+              <p className="text-xl font-bold text-foreground mb-6">
+                {price}
+              </p>
+              <div className="flex items-center justify-center text-sm text-accent font-semibold">
+                <Info className="h-4 w-4 mr-2" />
+                Klikkaa nähdäksesi lisätiedot
+              </div>
+            </div>
+          </Card>
+
+          {/* Back side */}
+          <Card className="absolute inset-0 p-8 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-accent text-accent-foreground overflow-auto" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
+            <h3 className="text-2xl font-bold mb-4 uppercase tracking-wide break-words">
+              {title}
+            </h3>
+            <div className="space-y-4 flex-grow overflow-auto">
+              {details?.map((detail, idx) => (
+                <div key={idx}>
+                  <h4 className="font-semibold mb-1">{detail.label}</h4>
+                  <p className="text-sm opacity-90">{detail.content}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6">
+              <Button
+                className="w-full bg-white hover:bg-white/90 text-accent font-semibold shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wide"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onButtonClick();
+                }}
+              >
+                {buttonText}
+              </Button>
+              <div className="flex items-center justify-center text-sm font-semibold mt-3">
+                <Info className="h-4 w-4 mr-2" />
+                Klikkaa kääntääksesi takaisin
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <Card className="p-8 flex flex-col h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-border bg-card group relative overflow-hidden">
