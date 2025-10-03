@@ -129,13 +129,13 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
                 Suosituin
               </div>
             )}
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 uppercase tracking-wide break-words">
-                {title}
-              </h3>
+            <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent group-hover:animate-pulse-scale transition-colors duration-300 flex-shrink-0">
                 <div className="w-6 h-6 rounded-full bg-accent group-hover:bg-white transition-colors duration-300"></div>
               </div>
+              <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 uppercase tracking-wide break-words">
+                {title}
+              </h3>
             </div>
             <p className="text-muted-foreground mb-6 flex-grow leading-relaxed text-base">
               {description}
@@ -153,13 +153,13 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
 
           {/* Back side */}
           <Card className="absolute inset-0 p-6 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-accent text-accent-foreground overflow-hidden" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-bold uppercase tracking-wide">
-                Paketin sisältö
-              </h3>
+            <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
                 <div className="w-6 h-6 rounded-full bg-white"></div>
               </div>
+              <h3 className="text-xl font-bold uppercase tracking-wide">
+                Paketin sisältö
+              </h3>
             </div>
             <div className="space-y-3 flex-grow">
               {details?.map((detail, idx) => (
