@@ -150,24 +150,27 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
           </Card>
 
           {/* Back side */}
-          <Card className="absolute inset-0 p-6 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-accent text-accent-foreground overflow-hidden" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
-            <h3 className="text-xl font-bold mb-3 uppercase tracking-wide">
-              {title}
+          <Card className="absolute inset-0 p-8 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300 border border-border bg-accent text-accent-foreground overflow-hidden" style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
+            <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-6">
+              <div className="w-8 h-8 rounded-full bg-white"></div>
+            </div>
+            <h3 className="text-2xl font-bold mb-6 uppercase tracking-wide">
+              Paketin sisältö
             </h3>
-            <div className="space-y-2 flex-grow">
+            <div className="space-y-4 flex-grow">
               {details?.map((detail, idx) => (
-                <div key={idx} className="text-sm">
-                  <span className="font-semibold">{detail.label}</span>
-                  <span className="opacity-90 ml-1">{detail.content}</span>
+                <div key={idx}>
+                  <div className="font-bold text-base mb-1">{detail.label}</div>
+                  <div className="text-sm opacity-90 leading-relaxed">{detail.content}</div>
                 </div>
               ))}
             </div>
-            <div className="mt-4 space-y-2">
-              <p className="text-lg font-bold">
+            <div className="mt-auto pt-6">
+              <p className="text-xl font-bold mb-6">
                 {price}
               </p>
               <Button
-                className="w-full bg-white hover:bg-white/90 text-accent font-semibold shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wide text-sm py-2"
+                className="w-full bg-white hover:bg-white/90 text-accent font-semibold shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wide"
                 onClick={(e) => {
                   e.stopPropagation();
                   onButtonClick();
@@ -175,10 +178,6 @@ const ServiceCard = ({ title, description, price, buttonText, onButtonClick, isP
               >
                 {buttonText}
               </Button>
-              <div className="flex items-center justify-center text-xs font-semibold opacity-75">
-                <Info className="h-3 w-3 mr-1" />
-                Klikkaa kääntääksesi takaisin
-              </div>
             </div>
           </Card>
         </div>

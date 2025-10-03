@@ -34,10 +34,10 @@ const Services = () => {
             onButtonClick={handleContactClick}
             detailsType="flip"
             details={[
-              { label: "⏱️ Kesto", content: "2-3 tapaamista, 1-2 viikkoa" },
-              { label: "📋 Sisältö", content: "Haasteiden kartoitus, konkreettiset toimenpidesuositukset, kirjallinen yhteenveto" },
-              { label: "👥 Kenelle sopii", content: "Kasvuhakuiset yritykset ja startup-vaiheessa olevat" },
-              { label: "✅ Lopputulos", content: "1-2 konkreettista toimenpidesuositusta toteutettavaksi" }
+              { label: "Alkukartoitus", content: "Perusteellinen keskustelu yrityksen nykytilanteesta, haasteista ja tavoitteista 2-3 tapaamisessa." },
+              { label: "Analysointi", content: "Tunnistetaan keskeisimmät pullonkaulat ja kehityskohteet, joihin kannattaa keskittyä ensimmäisenä." },
+              { label: "Toimenpidesuositukset", content: "Konkreettiset 1-2 suositusta, jotka voit ottaa heti käyttöön liiketoiminnan kehittämiseksi." },
+              { label: "Kirjallinen raportti", content: "Saat yhteenvedon keskusteluista ja toimenpidesuosituksista toteutuksen tueksi." }
             ]}
           />
           <ServiceCard
