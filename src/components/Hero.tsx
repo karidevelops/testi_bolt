@@ -12,10 +12,10 @@ const Hero = () => {
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="text-center animate-fade-in">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6 animate-scale-in tracking-tight">
-            Kasvu, kannattavuus<br />
-            ja arjen ratkaisut.
+            Growing the Future – Together
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-10 max-w-3xl mx-auto leading-relaxed font-light">Sparraan niin pieniä startupeja kuin kasvuvaiheessa olevia pk-yrityksiä. Kirkastetaan tarjooma, tuotteistetaan, optimoidaan kustannukset ja rakennetaan hinnoittelu, joka kestää kasvun. Olen tukenasi myös yrityksen arkisissa haasteissa.</p>
+          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 max-w-3xl mx-auto leading-relaxed font-light">Kasvamme tulevaisuuteen – yhdessä.</p>
+          <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-3xl mx-auto leading-relaxed font-light">Yhdessä rakennamme kasvua, joka kestää. Concept7 tukee yrityksiä ja organisaatioita kehittämään tulevaisuuden ratkaisuja – tänään.</p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" className="text-lg px-8 py-6 bg-accent hover:bg-accent-dark text-accent-foreground shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-105 font-semibold" onClick={() => document.getElementById('palvelut')?.scrollIntoView({
             behavior: 'smooth'
