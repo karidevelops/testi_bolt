@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import BadgeVariants from "@/components/ServiceCardVariants";
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <BadgeVariants />
         <Services />
         <About />
         <Contact />
